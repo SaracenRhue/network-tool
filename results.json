@@ -1,0 +1,58 @@
+{
+  "file_download_test": {
+    "file_1000KB.txt": { "wget_speed": "0,00 =0,02s", "curl_speed": "4202701" },
+    "file_1000KB.jpg": {
+      "wget_speed": "0,00 =0,008s",
+      "curl_speed": "3014165"
+    },
+    "file_1000KB.mp4": {
+      "wget_speed": "0,00 =0,008s",
+      "curl_speed": "1521262"
+    },
+    "file_1000KB.pdf": {
+      "wget_speed": "0,00 =0,008s",
+      "curl_speed": "1177180"
+    },
+    "file_10000KB.txt": {
+      "wget_speed": "0,00 =0,07s",
+      "curl_speed": "2024340"
+    },
+    "file_10000KB.jpg": {
+      "wget_speed": "0,00 =0,07s",
+      "curl_speed": "1714614"
+    },
+    "file_10000KB.mp4": {
+      "wget_speed": "0,00 =0,07s",
+      "curl_speed": "2464077"
+    },
+    "file_10000KB.pdf": {
+      "wget_speed": "0,00 =0,07s",
+      "curl_speed": "2542520"
+    },
+    "file_100000KB.txt": { "wget_speed": "0,00 =0,7s", "curl_speed": "912961" },
+    "file_100000KB.jpg": {
+      "wget_speed": "0,00 =0,7s",
+      "curl_speed": "2215251"
+    },
+    "file_100000KB.mp4": { "wget_speed": "0,00 =0,7s", "curl_speed": "769743" },
+    "file_100000KB.pdf": {
+      "wget_speed": "0,00 =0,7s",
+      "curl_speed": "1334854"
+    },
+    "file_1000000KB.txt": {
+      "wget_speed": "0,00 =6,9s",
+      "curl_speed": "455288"
+    },
+    "file_1000000KB.jpg": {
+      "wget_speed": "0,00 =6,6s",
+      "curl_speed": "442727"
+    },
+    "file_1000000KB.mp4": {
+      "wget_speed": "0,00 =6,6s",
+      "curl_speed": "478323"
+    },
+    "file_1000000KB.pdf": { "wget_speed": "0,00 =6,7s", "curl_speed": "418122" }
+  },
+  "network_latency_test": { "average_ping": "" },
+  "path_analysis_test": { "traceroute": "" }
+}
