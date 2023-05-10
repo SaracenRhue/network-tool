@@ -9,7 +9,7 @@ FILE_SIZES=(1000 10000 100000 1000000)
 # file types to test
 FILE_TYPES=("txt" "jpg" "mp4" "pdf")
 
-# function to generate random file of specified size and type
+# generate random file of specified size and type
 generate_file() {
     local file_size="$1"
     local file_type="$2"
@@ -20,34 +20,27 @@ generate_file() {
     echo "$file_name"
 }
 
-# function to test file download with wget and curl
+# test file download with wget and curl
 test_file_download() {
     local file_name="$1"
-    
-    # download file with wget and capture download speed
     wget_speed=$(wget -q --show-progress "$WEBSERVER_URL/$file_name" 2>&1 | tail -2 | head -1 | awk '{print $3 " " $4}')
-
-    # download file with curl and capture download speed
     curl_speed=$(curl -s -O "$WEBSERVER_URL/$file_name" -w '%{speed_download}' -o /dev/null)
-
     # json output
     echo "\"$file_name\": {\"wget_speed\": \"$wget_speed\", \"curl_speed\": \"$curl_speed\"}"
 }
 
-# function to test network latency with ping
+# test network latency with ping
 test_latency() {
     # capture average ping time
     avg_ping=$(ping -c 4 "$(echo "$WEBSERVER_URL" | awk -F/ '{print $3}')" | tail -1| awk '{print $4}' | cut -d '/' -f 2)
-
     # json output
     echo "\"average_ping\": \"$avg_ping\""
 }
 
-# function to test path analysis with traceroute
+# test path analysis with traceroute
 test_traceroute() {
     # capture traceroute output
     traceroute_output=$(traceroute "$(echo "$WEBSERVER_URL" | awk -F/ '{print $3}')")
-
     # json output
     echo "\"traceroute\": \"$traceroute_output\""
 }
